@@ -1,0 +1,283 @@
+body{
+  background: #F0F0F0;
+}
+
+h2{
+font-family: Lato;
+font-weight: bold;
+font-size: 24px;
+color: #049372;
+text-align: left;
+}
+
+h4{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #049376;
+  margin: unset;
+}
+#center{
+  display: grid;
+  margin-right:292px;
+  margin-left:292px;
+}
+
+header {
+  display: grid;
+}
+
+
+#cover-photo{
+  background: #367241;
+  position: relative;
+  height: 293px;
+}
+
+#name{
+  position: absolute;
+  bottom: 0px;
+  left: 227px;
+  font-family: Lato;
+font-style: normal;
+font-weight: normal;
+font-size: 33px;
+line-height: normal;
+color: #FFFFFF;
+text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
+
+}
+
+#profile-pic{
+  position: absolute;
+  top: 195px;
+  left: 52px;
+  width: 150px;
+  height: 150px;
+  background: #73AD21;
+  border: 3px solid #ffffff;
+  border-radius: 100px;
+}
+#basic-info{
+  display: grid;
+  background: #FFFFFF;
+  grid-template-columns: 2fr 1fr;
+  width: 856px;
+  height: 66px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+.info-section{
+  display:flex;
+}
+
+.info-button{
+  display:flex;
+  justify-content: flex-end;
+  padding: 9px 34px 0 0;
+}
+
+.info{
+  font-family: Lato;
+font-size: 18px;
+margin: 23px 0 0 227px;
+color: #9E9E9E;
+}
+
+.msgicon{
+  width: 22.86px;
+height: 22.86px;
+}
+
+.button{
+width: 131px;
+height: 40px;
+left: 983px;
+top: 352px;
+background: #19B5FE;
+border-radius: 20px;
+border: none;
+font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: normal;
+color: #FFFFFF;
+}
+
+#body{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding-top: 14px;
+  grid-gap: 14px 16px;
+}
+
+.column{
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 14px;
+  grid-auto-rows: minmax(min-content, max-content);
+}
+
+.content{
+  width: auto;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  display: grid;
+  padding: 0 19px 26px 19px;
+}
+
+.content.exp{
+  padding: 31px 0 31px 0;
+  text-align:center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.exp-level{
+font-family: Lato;
+font-size: 24px;
+color: #FFA400;
+}
+.exp-level.pts{
+font-size: 12px;
+line-height: normal;
+color: #9E9E9E;
+}
+
+.karma{
+  font-family: Lato;
+font-size: 24px;
+color: #FE1965;
+}
+
+.review{
+  display:grid;
+  grid-template-columns: 0.2fr 1fr;
+  margin-right: 40px;
+  grid-column-gap: 16px;
+}
+
+.review-deets{
+  text-align: center;
+}
+
+.exp-data{
+font-family: Lato;
+font-size: 21px;
+color: #3D3D3D;
+  white-space: nowrap;
+}
+.exp-name{
+  font-family: Lato;
+  font-size: 12px;
+  color: #049372;
+}
+.content.summary{
+  text-align:center;
+  display:block;
+}
+
+.tab{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border: 1px solid #19B5FE;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  width: 75%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tab-active{
+background-color: #19B5FE;
+box-sizing: border-box;
+border-radius: 20px;
+font-family: Lato;
+font-style: normal;
+font-weight: bold;
+font-size: 18px;
+line-height: normal;
+color: #FFFFFF;
+padding: 10px;
+}
+
+.tab-inactive{
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  color: #19B5FE;
+  padding: 10px;
+
+}
+.route{
+  display:grid;
+  grid-template-columns: 0.5fr 1fr;
+}
+.subtitle{
+font-family: Roboto;
+font-size: 14px;
+color: #736C6C;
+}
+.route-date{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: normal;
+  color: #3D3D3D;
+
+}
+
+.review-content{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+}
+.review-content.outstanding{
+color: #26C281;
+}
+.review-content.bad{
+color: #D24D57;
+}
+.review-content.ok{
+  color: #FE9F19;
+}
+.review-body{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: normal;
+color: #3D3D3D;
+}
+
+.review-content.subtitle{
+  font-size: 11px;
+  color: #939393;
+  margin-bottom: 11px;
+}
+.reviewer-name{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 13px;
+line-height: normal;
+color: #626262;
+}
+.review-date{
+  font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 9px;
+line-height: normal;
+color: #939393;
+
+}
