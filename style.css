@@ -20,8 +20,8 @@ h4{
 }
 #center{
   display: grid;
-  margin-right:292px;
-  margin-left:292px;
+  margin: 0 auto;
+  width: 60%;
 }
 
 header {
@@ -63,7 +63,6 @@ text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.9);
   display: grid;
   background: #FFFFFF;
   grid-template-columns: 2fr 1fr;
-  width: 856px;
   height: 66px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
 }
@@ -86,8 +85,7 @@ color: #9E9E9E;
 }
 
 .msgicon{
-  width: 22.86px;
-height: 22.86px;
+  background-image: url(img/mail2.svg);
 }
 
 .button{
@@ -105,6 +103,16 @@ font-size: 18px;
 line-height: normal;
 color: #FFFFFF;
 }
+.button > span{
+  vertical-align: middle;
+}
+.button-icon{
+  width: 24px;
+  height: 24px;
+  display:inline-block;
+  margin-right: 5px;
+}
+
 
 #body{
   display: grid;
@@ -189,7 +197,7 @@ color: #3D3D3D;
   border-radius: 20px;
   width: 75%;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 auto 20px;
 }
 
 .tab-active{
