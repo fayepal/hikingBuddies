@@ -269,8 +269,44 @@ color: #939393;
 @media screen and (min-width: 360px) {
   #center {width: 98%;}
 }
+/*ipad*/
+@media screen and (max-width: 768px){
+  .button {
+    height:40px;
+  margin:auto 14px auto 73px;
+}
+  .info {
+    margin: 0 0 0 175px;
+  }
+  .info-button{
+    padding: 9px 15px 0 0;
+  }
+  #basic-info{
+    padding: 10px 0 10px 0;
+  }
+  #profile-pic {
+    width: 120px;
+    height: 120px;
+    left: 31px;
+    top: 141px;
+  }
+  #name {
+    left:175px;
+    font-size: 32px;
+  }
+  #cover-photo{
+    height: 212px;
+  }
+  .tab{
+    width: 100%;
+  }
+  h3{
+    font-size: 16px;
+  }
 
-@media screen and (max-width: 360px){
+}
+/*mobile*/
+@media screen and (max-width: 375px){
   #body{
     display: block;
   }
@@ -315,38 +351,11 @@ color: #939393;
 }
 
 @media screen and (min-width: 768px) {
-  #center {width: 80%;}
-}
-@media screen and (min-width: 361px) and (max-width: 768px){
-  .button {
-    height:40px;
-  margin:14px 34px 0 41px;}
-  .info {margin: 16px 0 0 175px;}
-  .info-button{padding: 9px 15px 0 0;}
-  #profile-pic {
-    width: 120px;
-    height: 120px;
-    left: 31px;
-    top: 141px;
-  }
-  #name {
-    left:175px;
-    font-size: 32px;
-  }
-  #cover-photo{
-    height: 212px;
-  }
-  .tab{
-    width: 100%;
-  }
-  h3{
-    font-size: 16px;
-  }
-
+  #center {width: 95%;}
 }
 
 @media screen and (min-width: 1024px)  {
-  #center {width:70%}
+  #center {width:85%}
 }
 @media screen and (min-width 768) and (max-width: 1024px)  {
 .button{
