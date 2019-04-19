@@ -159,8 +159,12 @@ margin: 14px 34px 0 117px;
   width: 40px;
   margin: 0 auto;
 }
+.hiker {
+  transform: rotateY(180deg);
+}
 .exp-level{
-color: #049372;
+  color: #049372;
+  margin: 15px 0 5px
 }
 .exp-level.pts{
 font-size: 12px;
@@ -170,7 +174,7 @@ color: #9E9E9E;
 
 .karma{
 font-size: 24px;
-/* color: #FE1965; */
+font-weight: bold;
 color : #3D3D3D;
 }
 

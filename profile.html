@@ -35,7 +35,7 @@
         <div class="experience">
           <div class="karma"><span data-value="points"></span></div>
           <div class="exp-level" data-value="experience_level_category">Intermediate</div>
-          <div class="exp-icons"><img src="img/adventurer.svg" /></div>
+          <div class="exp-icons hiker"><img src="img/backpacker.svg" /></div>
         </div>
         <div class="experience">
           <div class="karma" data-value="karma_points">100</div>
@@ -350,9 +350,13 @@ document.querySelectorAll('[data-value]').forEach(n => {
   const target = n.getAttribute('data-value').split('.');
   let value = '';
   let obj = data;
-  n.textContent = target.reduce((acc, t)=>{
-    return acc[t]
-  }, data);
+  try {
+    n.textContent = target.reduce((acc, t)=>{
+      return acc[t]
+    }, data);
+  } catch(e) {
+    n.textContent = '';
+  }
 });
 if(data['cover_picture']) {
   document.getElementById('cover-photo').style.backgroundImage = `url(${data['cover_picture']})`;
