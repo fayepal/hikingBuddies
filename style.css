@@ -149,10 +149,10 @@ margin: 14px 34px 0 117px;
   margin-bottom: 20px;
 }
 .content.exp{
-  padding: 31px 0 31px 0;
   text-align:center;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-content: center;
 }
 .exp-icons{
   height:40px;
@@ -164,7 +164,7 @@ margin: 14px 34px 0 117px;
 }
 .exp-level{
   color: #049372;
-  margin: 15px 0 5px
+  margin: 10px 0;
 }
 .exp-level.pts{
 font-size: 12px;
@@ -188,6 +188,9 @@ color : #3D3D3D;
   text-align: center;
 }
 
+.experience {
+  max-height: 115px;
+}
 .exp-data{
 font-size: 21px;
 color: #3D3D3D;
@@ -240,6 +243,7 @@ color: #FFFFFF;
 .hike{
   display:grid;
   grid-template-columns: 1fr 3fr;
+  margin-bottom: 10px;
 }
 .subtitle{
 font-size: 14px;
@@ -312,12 +316,12 @@ color: #939393;
   background-position: left top;
 }
 .chart li {
-  position: relative;
   display: table-cell;
   vertical-align: bottom;
   height: 200px;
 }
 .chart span {
+  position: relative;
   margin: 0 7px;
   display: block;
   background: rgba(209, 236, 250, 0.75);
@@ -325,15 +329,25 @@ color: #939393;
   text-align: center;
   line-height: 30px;
 }
-.chart span:before {
+.chart span:after {
   position: absolute;
   left: 0;
   right: 0;
   top: 100%;
-  padding: 5px 1em 0;
   display: block;
   text-align: center;
   content: attr(title);
+  word-wrap: break-word;
+  color: #049372;
+}
+.chart span:before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  display: block;
+  text-align: center;
+  content: attr(data-label);
   word-wrap: break-word;
 }
 
@@ -419,7 +433,6 @@ color: #939393;
     margin: 0 auto 10px;
   }
   .content{
-    padding: 10px 19px 16px 19px;
     margin: 8px 0 8px 0;
   }
   .tab{
@@ -434,7 +447,7 @@ color: #939393;
 @media screen and (min-width: 1024px)  {
   #center {width:85%}
 }
-@media screen and (min-width 768) and (max-width: 1024px)  {
+@media screen and (min-width: 768px) and (max-width: 1024px)  {
 .button{
   margin: 14px 10px 0 76px}
 #profile-pic {
