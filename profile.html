@@ -1,154 +1,446 @@
 <html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
- <link rel="stylesheet" type="text/css" href="style.css">
- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
- <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
+
 <body>
-<div id="center">
-<header>
-  <div id="cover-photo">
-    <div id="profile-pic">
-      <img src="img/profile-pic.jpg"/>
-    </div>
-    <div id="name">
-    Jane Tumbleweed
+  <div id="center">
+    <header>
+      <div id="cover-photo">
+        <div id="profile-pic">
+          <img data-value="profile_picture"/>
+        </div>
+        <div id="name">
+          <span data-value="first_name"></span>&nbsp;
+          <span data-value="last_name"></span>
+        </div>
+      </div>
+      <div id="basic-info">
+        <h3 class="info"><span data-value="sex">Female</span> • <span data-value="age">21</span> • <span data-value="nationality">United States of America</span></h3>
+        <button class="button">
+          <span>Edit profile</span>
+        </button>
+        <button class="button hidden">
+          <span class="button-icon msgicon" /></span>
+          <span>Message</span>
+        </button>
+      </div>
+    </header>
+    <div id="body">
+      <div class="content exp">
+        <div class="experience">
+          <div class="karma"><span data-value="points"></span></div>
+          <div class="exp-level" data-value="experience_level_category">Intermediate</div>
+          <div class="exp-icons"><img src="img/adventurer.svg" /></div>
+        </div>
+        <div class="experience">
+          <div class="karma" data-value="karma_points">100</div>
+          <div class="exp-level">Karma</div>
+          <div class="exp-icons"><img src="img/karma.svg" /></div>
+        </div>
+      </div>
+      <div class="content charts">
+        <h2>Sac scale distribution</h2>
+        <ul class="chart">
+          <li>
+            <span title="T1"></span>
+          </li>
+          <li>
+            <span title="T2"></span>
+          </li>
+          <li>
+            <span title="T3"></span>
+          </li>
+          <li>
+            <span title="T4"></span>
+          </li>
+          <li>
+            <span title="T5"></span>
+          </li>
+          <li>
+            <span title="T6"></span>
+          </li>
+        </ul>  
+      </div>
+      <div class="content routes">
+        <h2>Routes created</h2>
+        <div id="routesHolder"></div>
+      </div>
+      <div class="content hikes">
+        <h2>Hikes</h2>
+        <div class="tab tab-view">
+            <div class="tab-head tab-active" data-tab="upcomingHike">
+              Upcoming
+            </div>
+            <div class="tab-head" data-tab="recentHike">
+              Recent
+            </div>
+            <div class="tab-head" data-tab="pastHike">
+              Past
+            </div>
+          </div>
+
+          <div class="tab-holder upcomingHike"></div>
+          <div class="tab-holder recentHike hidden"></div>
+          <div class="tab-holder pastHike hidden"></div>
+      </div>
+      <div class="content summary">
+        <h2>Summary</h2>
+        <div class="tab tab-view">
+          <div class="tab-head tab-active" data-tab="lastMonth">
+            4 Weeks
+          </div>
+          <div class="tab-head" data-tab="lastYear">
+            1 Year
+          </div>
+          <div class="tab-head" data-tab="lifeTime">
+            Lifetime
+          </div>
+        </div>
+        <div class="tab-holder lastMonth">
+          <div><span class="exp-data" data-value="hiking_stats.last_month_stats.count"></span> <span class="exp-name">HIKES</span></div>
+          <div><span class="exp-data"><span data-value="hiking_stats.last_month_stats.length"></span> Km</span> <span class="exp-name">RAN</span></div>
+          <div><span class="exp-data"><span data-value="hiking_stats.last_month_stats.elevation_gain"></span> m</span> <span class="exp-name">ELEVATION</span></div>
+        </div>
+        <div class="tab-holder lifeTime hidden">
+            <div><span class="exp-data" data-value="hiking_stats.all_time_stats.count"></span> <span class="exp-name">HIKES</span></div>
+            <div><span class="exp-data"><span data-value="hiking_stats.all_time_stats.length"></span> Km</span> <span class="exp-name">RAN</span></div>
+            <div><span class="exp-data"><span data-value="hiking_stats.all_time_stats.elevation_gain"></span> m</span> <span class="exp-name">ELEVATION</span></div>
+        </div>
+        <div class="tab-holder lastYear hidden">
+            <div><span class="exp-data" data-value="hiking_stats.last_year_stats.count"></span> <span class="exp-name">HIKES</span></div>
+            <div><span class="exp-data"><span data-value="hiking_stats.last_year_stats.length"></span> Km</span> <span class="exp-name">RAN</span></div>
+            <div><span class="exp-data"><span data-value="hiking_stats.last_year_stats.elevation_gain"></span> m</span> <span class="exp-name">ELEVATION</span></div>
+        </div>
+      </div>
+      <div class="content reviews">
+        <h2>Reviews</h2>
+        <div id="reviewHolder"></div>
+      </div>
     </div>
   </div>
-  <div id="basic-info">
-    <h3 class="info">Female • 21 • United States of America</h3>
-      <button class="button">
-        <span class="button-icon msgicon"/></span>
-        <span>Message</span>
-      </button>
-  </div>
-</header>
-<div id="body">
-    <div class="content exp">
-      <div class="experience">
-        <div class="exp-level">Intermediate</div>
-        <div class="exp-level pts">1200 pts</div>
-        <div class="exp-icons"><img src="img/adventurer.svg"/></div>
-      </div>
-      <div class="experience">
-        <div class="karma">100</div>
-        <div class="exp-icons"><img src="img/karma.svg"/></div>
-      </div>
-    </div>
-    <div class="content">
-      <h2>Name of the Chart Here</h2>
-    </div>
-    <div class="content">
-      <h2>Routes</h2>
-      <div class="route">
-        <div class="route-date">
-          03/12/2018
-        </div>
-        <div class="route-details">
-          <h4>Mittenwalder Klettersteig</h4>
-          <span class="subtitle">T4, 16,3 Km, 1940m</span>
-        </div>
-      </div>
-      <div class="route">
-        <div class="route-date">
-          03/12/2018
-        </div>
-        <div class="route-details">
-          <h4>Mittenwalder Klettersteig</h4>
-          <span class="subtitle">T4, 16,3 Km, 1940m</span>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <h2>Hikes</h2>
-      <div class="route">
-        <div class="route-date">
-          03/12/2018
-        </div>
-        <div class="route-details">
-          <h4>Mittenwalder Klettersteig</h4>
-          <span class="subtitle">T4, 16,3 Km, 1940m</span>
-        </div>
-      </div>
-      <div class="route">
-        <div class="route-date">
-          03/12/2018
-        </div>
-        <div class="route-details">
-          <h4>Mittenwalder Klettersteig</h4>
-          <span class="subtitle">T4, 16,3 Km, 1940m</span>
-        </div>
-      </div>
-    </div>
-    <div class="content summary">
-      <h2>Summary</h2>
-      <div class="tab">
-        <div class="tab-inactive">
-          <h3 class="lato">4 Weeks</h3>
-        </div>
-        <div class="tab-active">
-          <h3 class="lato">Lifetime</h3>
-        </div>
-        <div class="tab-inactive">
-          <h3 class="lato">1 Year</h3>
-        </div>
-      </div>
-      <div><span class="exp-data">100</span> <span class="exp-name">HIKES</span></div>
-      <div><span class="exp-data">10.000 km</span> <span class="exp-name">RAN</span></div>
-      <div><span class="exp-data">123.458 hrs</span> <span class="exp-name">MOVING</span></div>
-      <div><span class="exp-data">10 km</span> <span class="exp-name">ELEVATION</span></div>
-    </div>
-    <div class="content">
-      <h2>Reviews</h2>
-      <div class="review">
-        <div class="review-deets">
-          <div class="img-icon"><img src="img/reviewer.jpg"/></div>
-          <div class="reviewer-name">Prinzessin</div>
-          <div class="review-date">23/12/2018</div>
-        </div>
-        <div class="review-content">
-          <h3 class="outstanding">Outstanding</h3>
-          <div class="review-content subtitle">T3 - From Piding to Inzell across the Zwiesel ridge [19.3 Km, 1916 m D+]</div>
-          <div class="review-body">Really good hiker. He endured until the end even though it was his first hike this year and he was wearing heavy category C mountain boots.</div>
-        </div>
-      </div>
-      <hr>
-      <div class="review">
-        <div class="review-deets">
-          <div class="img-icon"><img src="img/reviewer.jpg"/></div>
-          <div class="reviewer-name">Prinzessin</div>
-          <div class="review-date">23/12/2018</div>
-        </div>
-        <div class="review-content">
-          <h3 class="bad">No Show</h3>
-          <div class="review-content subtitle">T3 - From Piding to Inzell across the Zwiesel ridge [19.3 Km, 1916 m D+]</div>
-          <div class="review-body">Really good hiker. He endured until the end even though it was his first hike this year and he was wearing heavy category C mountain boots.</div>
-        </div>
-      </div>
-    </div>
-    <div class="content">
-      <h2>Events</h2>
-      <div class="route">
-        <div class="route-date">
-          03/12/2018
-        </div>
-        <div class="route-details">
-          <h4>Mittenwalder Klettersteig</h4>
-          <span class="subtitle">T4, 16,3 Km, 1940m</span>
-        </div>
-      </div>
-      <div class="route">
-        <div class="route-date">
-          03/12/2018
-        </div>
-        <div class="route-details">
-          <h4>Mittenwalder Klettersteig</h4>
-          <span class="subtitle">T4, 16,3 Km, 1940m</span>
-        </div>
-      </div>
-    </div>
-</div>
-</div>
 </body>
+<script>
+const data = {
+  "reviews": [
+    {
+      "comment": "Very good. A test review for test.",
+      "event_datetime": "2018-09-29T20:05:00Z",
+      "rating": 5,
+      "event_title": "Blomberg [9.8 Km, 627 m gain]",
+      "no_show": false,
+      "reviewer_name": "Amit Verma",
+      "reviewer_id": 1,
+      "event_id": 11
+    },
+    {
+      "comment": "Very friendly and fit hiker.",
+      "event_datetime": "2018-09-29T20:05:00Z",
+      "rating": 5,
+      "event_title": "Blomberg [9.8 Km, 627 m gain]",
+      "no_show": false,
+      "reviewer_name": "Charlie Harding",
+      "reviewer_id": 5,
+      "event_id": 11
+    },
+    {
+      "comment": "Very friendly and fit hiker. A great climber as well. It was a pleasure to meet her!",
+      "event_datetime": "2018-09-23T05:05:00Z",
+      "rating": 5,
+      "event_title": "Geigelstein [7.0 Km, 1137 m gain]",
+      "no_show": false,
+      "reviewer_name": "Amit Verma",
+      "reviewer_id": 1,
+      "event_id": 10
+    }
+  ],
+  "experience_level_category": "Intermediate",
+  "member_since": "2018-10-25T16:24:35Z",
+  "first_name": "Charlie",
+  "nationality": "GB",
+  "karma_points": 6,
+  "last_name": "Test",
+  "hiking_stats": {
+    "last_year_stats": {
+      "count": 2,
+      "length": 20.8,
+      "elevation_gain": 2139
+    },
+    "last_month_stats": {
+      "count": 0,
+      "length": 0,
+      "elevation_gain": 0
+    },
+    "all_time_stats": {
+      "count": 2,
+      "length": 20.8,
+      "elevation_gain": 2139
+    },
+    "sac_scale_distribution_stats": {
+      "T5": 0,
+      "T2": 1,
+      "T4": 1,
+      "T1": 0,
+      "T3": 0,
+      "T6": 0
+    }
+  },
+  "reviews_value": [
+    [
+      "5",
+      "Outstanding"
+    ],
+    [
+      "4",
+      "Excellent"
+    ],
+    [
+      "3",
+      "Good"
+    ],
+    [
+      "2",
+      "Poor"
+    ],
+    [
+      "1",
+      "Very disappointing"
+    ]
+  ],
+  "id": 6,
+  "upcoming_hikes": [
+    {
+      "date": "2024-08-17T10:00:00Z",
+      "route": {
+        "route_id": 261,
+        "route_title": "Kranzhorn von Erlerberg",
+        "distance": 6.8,
+        "elevation_gain": 541,
+        "sac_scale": "T3"
+      },
+      "is_organizer": false,
+      "event_title": "Description template",
+      "activity": "HI",
+      "event_id": 1
+    },
+    {
+      "event_title": "Social meetup test",
+      "date": "2019-10-02T09:15:00Z",
+      "activity": "SO",
+      "event_id": 38,
+      "is_organizer": true
+    }
+  ],
+  "cover_picture": "http://52.59.231.187/media/user_6/A_Fabulous_Sunset_PdTS4gT.jpg",
+  "hikes_done": [
+    {
+      "date": "2018-10-21T17:45:00Z",
+      "route": {
+        "route_id": 194,
+        "route_title": "Mittenwalder Klettersteig",
+        "distance": 16.3,
+        "elevation_gain": 1939,
+        "sac_scale": "T4"
+      },
+      "is_organizer": true,
+      "event_title": "Mittenwalder Klettersteig [16.3 Km, 1940 m gain]",
+      "activity": "HI",
+      "event_id": 18
+    },
+    {
+      "date": "2018-12-11T12:05:00Z",
+      "route": {
+        "route_id": 205,
+        "route_title": "Hochkalter-Überschreitung mit Steinberg",
+        "distance": 4.5,
+        "elevation_gain": 199,
+        "sac_scale": "T2"
+      },
+      "is_organizer": false,
+      "event_title": "Hochkalter-Überschreitung mit Steinberg [4.5 Km, 199 m gain]",
+      "activity": "HI",
+      "event_id": 22
+    }
+  ],
+  "route_created_list": [
+  {
+				"route_id": 194,
+				"route_title": "Mittenwalder Klettersteig",
+				"distance": 16.3,
+				"elevation_gain": 1939,
+				"sac_scale": "T4"
+			}  ,
+      {
+				"route_id": 194,
+				"route_title": "Mittenwalder Klettersteig",
+				"distance": 16.3,
+				"elevation_gain": 1939,
+				"sac_scale": "T4"
+			}  
+      ,{
+				"route_id": 194,
+				"route_title": "Mittenwalder Klettersteig",
+				"distance": 16.3,
+				"elevation_gain": 1939,
+				"sac_scale": "T4"
+			}    
+  ],
+  "points": 1421,
+  "cover_picture_thumbnail": "http://52.59.231.187/media/CACHE/images/user_6/A_Fabulous_Sunset_PdTS4gT/e695f5816d726bd2f762642b50dd198a.jpg",
+  "profile_picture_thumbnail": "http://52.59.231.187/media/CACHE/images/user_6/Thaneller/f1ccae5acd4f0aad76395c9753a7b147.jpg",
+  "upcoming_waitlisted_hikes": [],
+  "profile_picture": "http://52.59.231.187/media/user_6/Thaneller.jpg",
+  "recently_completed_hikes": [
+    {
+      "date": "2018-08-25T15:20:00Z",
+      "route": {
+        "route_id": 205,
+        "route_title": "Hochkalter-Überschreitung mit Steinberg",
+        "distance": 4.5,
+        "elevation_gain": 199,
+        "sac_scale": "T2"
+      },
+      "is_organizer": false,
+      "event_title": "Gieenbachklamm [4.5 Km, 199 m gain]",
+      "activity": "HI",
+      "event_id": 8
+    },
+    {
+      "date": "2019-02-20T21:15:00Z",
+      "route": {
+        "route_id": 205,
+        "route_title": "Hochkalter-Überschreitung mit Steinberg",
+        "distance": 4.5,
+        "elevation_gain": 199,
+        "sac_scale": "T2"
+      },
+      "is_organizer": true,
+      "event_title": "es-us charlie",
+      "activity": "HI",
+      "event_id": 62
+    },
+    {
+      "event_title": "Bouldering",
+      "date": "2019-03-08T12:05:00Z",
+      "activity": "BO",
+      "event_id": 68,
+      "is_organizer": true
+    },
+    {
+      "event_title": "Skiing today",
+      "date": "2019-03-07T12:05:00Z",
+      "activity": "SK",
+      "event_id": 69,
+      "is_organizer": true
+    }
+  ],
+  "age": 19,
+  "sex": "Male"
+};
+
+document.querySelectorAll('[data-value]').forEach(n => {
+  if(n.tagName === 'IMG') {
+    n.src = data[n.getAttribute('data-value')];
+    return;
+  }
+  const target = n.getAttribute('data-value').split('.');
+  let value = '';
+  let obj = data;
+  n.textContent = target.reduce((acc, t)=>{
+    return acc[t]
+  }, data);
+});
+if(data['cover_picture']) {
+  document.getElementById('cover-photo').style.backgroundImage = `url(${data['cover_picture']})`;
+}
+
+// set tabs
+document.querySelectorAll('.tab-view').forEach(p => p.addEventListener('click', e => {
+  const parent = e.target.parentNode.parentNode;
+  parent.querySelectorAll('.tab-holder').forEach(n => n.classList.add('hidden'));
+  parent.querySelector(`.${e.target.getAttribute('data-tab')}`).classList.remove('hidden');
+  parent.querySelectorAll('.tab-head').forEach(n => n.classList.remove('tab-active'));
+  e.target.classList.add('tab-active');
+}));
+
+// set reviews
+const reviewMap = {
+  1: 'Very disappointing',
+  2: 'Poor',
+  3: 'Good',
+  4: 'Excellent',
+  5: 'Outstanding',
+}
+if (data.reviews.length > 0) {
+  const reviewHolder = document.getElementById('reviewHolder');
+  data.reviews.forEach(r => {
+    const review = document.createElement('div');
+    review.classList.add('review');
+    const eventDate = new Date(r.event_datetime);
+    review.innerHTML = `
+      <div class="review-deets">
+        <div class="img-icon"><img src="img/reviewer.jpg" /></div>
+        <div class="reviewer-name">${r.reviewer_name}</div>
+        <div class="review-date">${eventDate.toLocaleDateString()}</div>
+      </div>
+      <div class="review-content">
+        ${r.no_show ? '<h3 class="outstanding">No Show</h3>' : `<h3 class="outstanding">${reviewMap[r.rating]}</h3>`}
+        <div class="review-content subtitle">${r.event_title}</div>
+        <div class="review-body">${r.comment}</div>
+      </div>`;
+    reviewHolder.appendChild(review);
+  })
+}
+
+// set Hikes
+const setHikes = (info, holder) => {
+  info.forEach(h => {
+    if(!h.route) return;
+    const hike = document.createElement('div');
+    hike.classList.add('hike');
+    const eventDate = new Date(h.date);
+    hike.innerHTML = `
+      <div class="route-date">${eventDate.toLocaleDateString()}</div>
+      <div class="route-details">
+        <h4>${h.event_title}</h4>
+        <span class="subtitle">${h.route.route_title}<br/>${h.route.sac_scale} | ${h.route.distance} Km | ${h.route.elevation_gain}m</span>
+      </div>`;
+      holder.appendChild(hike);
+  })
+}
+if (data.upcoming_hikes.length > 0) setHikes(data.upcoming_hikes, document.querySelector('.upcomingHike'));
+if (data.hikes_done.length > 0) setHikes(data.hikes_done, document.querySelector('.pastHike'));
+if (data.recently_completed_hikes.length > 0) setHikes(data.recently_completed_hikes, document.querySelector('.recentHike'));
+
+// set Routes
+if (data.route_created_list.length > 0) {
+  const routesHolder = document.getElementById('routesHolder');
+  data.route_created_list.forEach(r => {
+    const route = document.createElement('div');
+    route.classList.add('route');
+    route.innerHTML = `
+      <div class="route-details">
+        <h4>${r.route_title}</h4>
+        <span class="subtitle">${r.sac_scale} | ${r.distance} Km | ${r.elevation_gain}m</span>
+      </div>`;
+      routesHolder.appendChild(route);
+  })
+}
+
+// chart data - hiking_stats.sac_scale_distribution_stats   
+const chartObj = data.hiking_stats.sac_scale_distribution_stats;
+const totalHikes = Object.values(chartObj).reduce((x, y) => x + y);
+Object.keys(chartObj).forEach(k => {
+  const ele = document.querySelector(`[title="${k}"]`);
+  if (ele && chartObj[k]) {
+    ele.style.height = Math.floor(chartObj[k]/totalHikes*100);
+    ele.textContent = chartObj[k];
+  }
+})
+
+</script>
 </html>
