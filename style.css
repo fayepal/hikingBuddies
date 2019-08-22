@@ -154,7 +154,7 @@ nav li{
 #search{
   position: absolute;
   top: 321px;
-  left: 348px;
+  left: calc(50% - 351px);
   background: #fff;
   width: 743px;
   height: 194px;
@@ -162,12 +162,16 @@ nav li{
   border-radius: 4px;
 }
 .content-section{
+  width:auto;
   display:flex;
-  margin:0 15px 0 15px;
 }
+
 .section{
-padding: 0 49px 0 49px;
+  width:1250px;
+  margin: 0 auto;
 }
+
+
 .route-card{
   width: 313px;
   background: #fff;
@@ -275,22 +279,8 @@ line-height: 14px;
 h2.heading{
   margin:0 0 19px 49px;
 }
-.dest-country{
-  transition: transform 0.5s, filter 0.5s ease-in-out;
-  transform-origin: center center;
-  filter: brightness(100%);
-  cursor: pointer;
-}
-.dest-country:hover{
-filter: brightness(125%);
-}
-.dest-country h2{
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  color:#fff
-}
+/*background for top destinations*/
+
 .de{
   background: url(img/dest-de.png);
 }
@@ -303,6 +293,26 @@ filter: brightness(125%);
 .cl{
   background: url(img/dest-cl.png);
 }
+.dest-country{
+  transition: transform 0.5s, filter 0.5s ease-in-out;
+  transform-origin: center center;
+  filter: brightness(100%);
+  cursor: pointer;
+  background-size: cover;
+}
+
+.dest-country:hover{
+filter: brightness(125%);
+}
+.dest-country h2{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color:#fff;
+}
+
+/*footer*/
 
 .section-column1{
   width: 100%;
@@ -314,8 +324,6 @@ filter: brightness(125%);
 .section-column1.cta-banner{
   padding: 50px 0 36px 0;
 }
-
-
 
 footer.footer-main{
   width: 100%;
